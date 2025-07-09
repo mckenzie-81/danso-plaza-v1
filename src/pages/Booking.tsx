@@ -35,10 +35,9 @@ const Booking = () => {
   const [checkOut, setCheckOut] = useState<Date>();
   const [formData, setFormData] = useState({
     name: "",
-    // email: '',
     phone: "",
-    guests: "",
-    room: "",
+    guests: null,
+    room: null,
     notes: "",
     promoCode: "",
   });
@@ -58,6 +57,8 @@ const Booking = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    console.log('Submitted:', formData, checkIn, checkOut);
 
     if (!checkIn || !checkOut) {
       toast({
