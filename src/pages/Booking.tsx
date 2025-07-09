@@ -24,7 +24,7 @@ import { cn } from "@/lib/utils";
 const Booking = () => {
   const validPromoCodes = [
     "BLOGGER-BILL",
-    "ADOOM096",
+    "ADOM096",
     "OSCAR",
     "FLYBOY",
     "VANDAL-JUDE",
@@ -58,7 +58,6 @@ const Booking = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log("Submitted:", formData, checkIn, checkOut);
 
     if (!checkIn || !checkOut) {
       toast({
@@ -93,9 +92,6 @@ const Booking = () => {
     );
     const isValidPromo = normalizedCodes.includes(promo);
 
-    console.log("Entered promo:", `'${promo}'`);
-    console.log("All codes:", normalizedCodes);
-    console.log("isValidPromo:", isValidPromo);
 
     if (formData.promoCode && !isValidPromo) {
       toast({
@@ -107,8 +103,7 @@ const Booking = () => {
       return;
     }
 
-    console.log(`Entered promo: '${formData.promoCode.trim().toUpperCase()}'`);
-    console.log(`All codes:`, validPromoCodes);
+
 
     setIsSubmitting(true);
 
