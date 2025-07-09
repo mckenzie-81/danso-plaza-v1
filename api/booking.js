@@ -22,11 +22,8 @@ export default async function handler(req, res) {
     try {
       data = JSON.parse(text);
     } catch (err) {
-      // Not JSON (probably an Apps Script HTML error page or deployment warning)
-      // You might log this somewhere else for devs
-      console.error("Google Apps Script returned non-JSON:", text);
 
-      // Only show a friendly error to the user
+      console.error("Google Apps Script returned non-JSON:", text);
       return res
         .status(500)
         .json({
