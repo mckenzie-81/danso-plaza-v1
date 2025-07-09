@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
     const text = await scriptRes.text();
     let data;
-
+    console.log("RAW Apps Script Response:", text);
     try {
       data = JSON.parse(text);
     } catch (err) {
