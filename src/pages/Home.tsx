@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -7,10 +7,11 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-             backgroundImage: `url('/hero-image.png')` }}
+            backgroundImage: `url('/hero-image.png')`,
+          }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-primary/10 to-primary/30" />
@@ -28,15 +29,15 @@ const Home = () => {
             <br />
             <span className="font-medium">Stay with Us.</span>
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Boutique stays designed for calm. Experience understated luxury
-            in the heart of tranquility.
+            Boutique stays designed for calm. Experience understated luxury in
+            the heart of tranquility.
           </motion.p>
 
           <motion.div
@@ -103,16 +104,19 @@ const Home = () => {
             {[
               {
                 title: "Premium Comfort",
-                description: "Thoughtfully designed spaces with luxury amenities and elegant furnishings for the perfect stay."
+                description:
+                  "Thoughtfully designed spaces with luxury amenities and elegant furnishings for the perfect stay.",
               },
               {
                 title: "Serene Location",
-                description: "Nestled in a peaceful setting that offers tranquility while keeping you connected to local attractions."
+                description:
+                  "Nestled in a peaceful setting that offers tranquility while keeping you connected to local attractions.",
               },
               {
                 title: "Personal Service",
-                description: "Attentive hospitality that anticipates your needs and ensures an exceptional experience."
-              }
+                description:
+                  "Attentive hospitality that anticipates your needs and ensures an exceptional experience.",
+              },
             ].map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -134,6 +138,20 @@ const Home = () => {
             ))}
           </div>
         </div>
+        <footer className="w-full mt-auto py-6">
+          <div className="text-sm md:text-lg max-w-2xl mx-auto text-center text-muted-foreground">
+            <a
+              href="https://radiiant.site"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Powered by{" "}
+              <span className="font-semibold text-black">
+                RADIIANT Software Labs
+              </span>
+            </a>
+          </div>
+        </footer>
       </section>
     </div>
   );
