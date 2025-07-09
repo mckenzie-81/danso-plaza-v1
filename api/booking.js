@@ -15,46 +15,58 @@ export default async function handler(req, res) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
     });
+
     const text = await scriptRes.text();
     let data;
+
     try {
       data = JSON.parse(text);
     } catch (err) {
-      // The response was not JSON, maybe an HTML error page
-      console.error("Non-JSON response from Apps Script:", text);
-      // Optionally you can log this somewhere more persistent
+      // Not JSON (probably an Apps Script HTML error page or deployment warning)
+      // You might log this somewhere else for devs
+      console.error("Google Apps Script returned non-JSON:", text);
+
+      // Only show a friendly error to the user
       return res
         .status(500)
         .json({
           result: "error",
-          error: "Google Apps Script did not return JSON",
-          raw: text,
+          error: "Sorry, booking service is temporarily unavailable. Please try again soon.",
         });
     }
 
-    // If Apps Script failed only because of Telegram, still show success
-    // Telegram errors often have "chat not found", "wrong chat", or similar.
+    // If Apps Script failed only because of Telegram, still show success to user
     if (
       data.result === "error" &&
       data.error &&
-      (data.error.toLowerCase().includes("chat not found") ||
+      (
+        data.error.toLowerCase().includes("chat not found") ||
         data.error.toLowerCase().includes("forbidden") ||
         data.error.toLowerCase().includes("bot was blocked") ||
         data.error.toLowerCase().includes("bad request") ||
         data.error.toLowerCase().includes("user not found") ||
-        data.error.toLowerCase().includes("group chat was upgraded")) // catch all common TG fails
+        data.error.toLowerCase().includes("group chat was upgraded")
+      )
     ) {
-      // Optionally, log the Telegram error somewhere for yourself
+      // Log for yourself, but hide from user
       console.warn("Telegram delivery failed, but booking saved:", data.error);
 
-      // Always tell the user booking was successful
+      // Show success to the user
       return res.status(200).json({ result: "success" });
     }
 
-    // Any other error (eg, sheet write fails, bad promo) should bubble up
+    // All other Apps Script errors or success
     return res.status(200).json(data);
+
   } catch (err) {
-    // Only fails if Apps Script is unreachable, or network error
-    return res.status(500).json({ result: "error", error: err.message });
+    // Fetch failed (network, env, deployment error)
+    console.error("Booking endpoint error:", err);
+
+    return res
+      .status(500)
+      .json({
+        result: "error",
+        error: "Booking service is temporarily unavailable. Please try again later."
+      });
   }
 }
