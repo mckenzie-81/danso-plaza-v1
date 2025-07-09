@@ -58,7 +58,7 @@ const Booking = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log('Submitted:', formData, checkIn, checkOut);
+    console.log("Submitted:", formData, checkIn, checkOut);
 
     if (!checkIn || !checkOut) {
       toast({
@@ -86,7 +86,7 @@ const Booking = () => {
     // Promo code validation
     if (
       formData.promoCode &&
-      !validPromoCodes.includes(formData.promoCode.trim())
+      !validPromoCodes.includes(formData.promoCode.trim().toUpperCase())
     ) {
       toast({
         title: "Invalid Promo Code",
