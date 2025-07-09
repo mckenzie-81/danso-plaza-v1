@@ -29,6 +29,8 @@ const Booking = () => {
     "FLYBOY",
     "VANDAL-JUDE",
     "MCKENZIE-81",
+    "AREYOUAGOD",
+    "KONTOR",
   ];
 
   const { toast } = useToast();
