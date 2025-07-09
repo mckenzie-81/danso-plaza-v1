@@ -85,12 +85,19 @@ const Booking = () => {
 
     // Promo code validation
 
-    const promo = formData.promoCode.trim().toUpperCase();
-    const isValid = validPromoCodes
-      .map((code) => code.trim().toUpperCase())
-      .includes(promo);
-      
-    if (formData.promoCode && !isValid) {
+    const promo = formData.promoCode
+      ? formData.promoCode.trim().toUpperCase()
+      : "";
+    const normalizedCodes = validPromoCodes.map((code) =>
+      code.trim().toUpperCase()
+    );
+    const isValidPromo = normalizedCodes.includes(promo);
+
+    console.log("Entered promo:", `'${promo}'`);
+    console.log("All codes:", normalizedCodes);
+    console.log("isValidPromo:", isValidPromo);
+
+    if (formData.promoCode && !isValidPromo) {
       toast({
         title: "Invalid Promo Code",
         description:
