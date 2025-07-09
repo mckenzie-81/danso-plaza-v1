@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   }
 
   const scriptUrl =
-    "https://script.google.com/macros/s/AKfycbz3RMt_jN12oU4V5HdTkVNdh6TbBVzuYkEWov05rsca0n3j9UqEDJcPud_MYwxaqFXF/exec";
+    "https://script.google.com/macros/s/AKfycbz8SeG6hRe8j5jxUfbRE3BBdjWmI_jwrNEYz0x9aKgoROFwesAzyE1zKAeK_f7kLSPo/exec";
 
   try {
     const scriptRes = await fetch(scriptUrl, {
