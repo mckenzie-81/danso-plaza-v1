@@ -84,10 +84,13 @@ const Booking = () => {
     }
 
     // Promo code validation
-    if (
-      formData.promoCode &&
-      !validPromoCodes.includes(formData.promoCode.trim().toUpperCase())
-    ) {
+
+    const promo = formData.promoCode.trim().toUpperCase();
+    const isValid = validPromoCodes
+      .map((code) => code.trim().toUpperCase())
+      .includes(promo);
+      
+    if (formData.promoCode && !isValid) {
       toast({
         title: "Invalid Promo Code",
         description:
@@ -96,6 +99,9 @@ const Booking = () => {
       });
       return;
     }
+
+    console.log(`Entered promo: '${formData.promoCode.trim().toUpperCase()}'`);
+    console.log(`All codes:`, validPromoCodes);
 
     setIsSubmitting(true);
 
