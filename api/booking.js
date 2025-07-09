@@ -7,7 +7,7 @@ export default async function handler(req, res) {
       .json({ result: "error", error: "Method Not Allowed" });
   }
 
-  const scriptUrl =process.env.VITE_BOOKING_WEBAPP_URL;
+  const scriptUrl = process.env.VITE_BOOKING_WEBAPP_URL;
 
   try {
     const scriptRes = await fetch(scriptUrl, {
@@ -15,7 +15,22 @@ export default async function handler(req, res) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
     });
-    const data = await scriptRes.json();
+    const text = await scriptRes.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (err) {
+      // The response was not JSON, maybe an HTML error page
+      console.error("Non-JSON response from Apps Script:", text);
+      // Optionally you can log this somewhere more persistent
+      return res
+        .status(500)
+        .json({
+          result: "error",
+          error: "Google Apps Script did not return JSON",
+          raw: text,
+        });
+    }
 
     // If Apps Script failed only because of Telegram, still show success
     // Telegram errors often have "chat not found", "wrong chat", or similar.
