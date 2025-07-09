@@ -28,6 +28,7 @@ const Booking = () => {
     "OSCAR",
     "FLYBOY",
     "VANDAL-JUDE",
+    "MCKENZIE-81",
   ];
 
   const { toast } = useToast();
@@ -57,7 +58,6 @@ const Booking = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
 
     if (!checkIn || !checkOut) {
       toast({
@@ -92,7 +92,6 @@ const Booking = () => {
     );
     const isValidPromo = normalizedCodes.includes(promo);
 
-
     if (formData.promoCode && !isValidPromo) {
       toast({
         title: "Invalid Promo Code",
@@ -102,8 +101,6 @@ const Booking = () => {
       });
       return;
     }
-
-
 
     setIsSubmitting(true);
 
