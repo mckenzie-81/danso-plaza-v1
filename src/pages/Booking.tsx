@@ -368,11 +368,11 @@ const Booking = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="promo-code" className="text-foreground">
+                  <Label htmlFor="promoCode" className="text-foreground">
                     Promo Code
                   </Label>
                   <Input
-                    id="promo-code"
+                    id="promoCode"
                     // type="tel"
                     value={formData.promoCode}
                     onChange={(e) =>
