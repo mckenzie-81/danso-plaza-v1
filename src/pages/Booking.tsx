@@ -22,7 +22,13 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 
 const Booking = () => {
-  const validPromoCodes = ["BLOGGER-BILL", "ADOOM096", "OSCAR", "FLYBOY", "VANDAL-JUDE"];
+  const validPromoCodes = [
+    "BLOGGER-BILL",
+    "ADOOM096",
+    "OSCAR",
+    "FLYBOY",
+    "VANDAL-JUDE",
+  ];
 
   const { toast } = useToast();
   const [checkIn, setCheckIn] = useState<Date>();
@@ -100,11 +106,7 @@ const Booking = () => {
         checkOut: checkOut.toISOString().slice(0, 10),
       };
 
-      // For Vite
-      const webAppUrl = import.meta.env.VITE_BOOKING_WEBAPP_URL;
-      // For CRA, use: const webAppUrl = process.env.REACT_APP_BOOKING_WEBAPP_URL;
-
-      const res = await fetch(webAppUrl, {
+      const res = await fetch("/api/booking", {
         method: "POST",
         body: JSON.stringify(payload),
         headers: { "Content-Type": "application/json" },
