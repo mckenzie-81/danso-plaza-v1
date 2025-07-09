@@ -7,8 +7,7 @@ export default async function handler(req, res) {
       .json({ result: "error", error: "Method Not Allowed" });
   }
 
-  const scriptUrl =
-    "https://script.google.com/macros/s/AKfycbz8SeG6hRe8j5jxUfbRE3BBdjWmI_jwrNEYz0x9aKgoROFwesAzyE1zKAeK_f7kLSPo/exec";
+  const scriptUrl =process.env.VITE_BOOKING_WEBAPP_URL;
 
   try {
     const scriptRes = await fetch(scriptUrl, {
