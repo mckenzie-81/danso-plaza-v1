@@ -49,7 +49,7 @@ const Gallery = () => {
     },
     {
       id: 7,
-      src: "/photo6.png",
+      src: "/photo12.png",
       alt: "Executive studio",
       category: "Rooms"
     },

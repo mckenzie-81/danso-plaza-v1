@@ -7,40 +7,48 @@ const Rooms = () => {
       id: 1,
       name: "Deluxe Suite",
       tagline: "Spacious elegance with garden views",
-      price: "From ₵500",
+      price: "From ₵400",
       image: "/photo3.png",
       features: ["King bed", "Garden view", "Private balcony", "Workspace"]
     },
     {
       id: 2,
-      name: "Premium King",
-      tagline: "Modern luxury with city convenience",
-      price: "From ₵500",
-      image: "/photo4.png",
-      features: ["King bed", "City view", "Mini bar", "Smart TV"]
+      name: " Standard Bedroom",
+      tagline: "Perfect for friends or colleagues",
+      price: "From ₵400",
+      image: "/photo6.png",
+      features: ["Twin beds", "Shared workspace", "Ensuite bath", "Air conditioning"]
     },
     {
       id: 3,
       name: "Classic Double",
       tagline: "Comfortable retreat for two",
-      price: "From ₵800",
+      price: "From ₵450",
       image: "/photo5.png",
       features: ["Queen bed", "Cozy seating", "Work desk", "Free WiFi"]
     },
     {
       id: 4,
-      name: " Standard Bedroom",
-      tagline: "Perfect for friends or colleagues",
-      price: "From ₵500",
-      image: "/photo6.png",
-      features: ["Twin beds", "Shared workspace", "Ensuite bath", "Air conditioning"]
+      name: "Premium King",
+      tagline: "Modern luxury with city convenience",
+      price: "From ₵450",
+      image: "/photo4.png",
+      features: ["King bed", "City view", "Mini bar", "Smart TV"]
     },
     {
       id: 5,
       name: "Executive Studio",
       tagline: "Business comfort with style",
-      price: "From ₵1,200",
+      price: "From ₵1000",
       image: "/photo11.png",
+      features: ["King bed", "Living area", "Kitchenette", "Business center"]
+    },
+    {
+      id: 6,
+      name: "King Bed",
+      tagline: "Business comfort with style",
+      price: "From ₵1,200",
+      image: "/photo12.png",
       features: ["King bed", "Living area", "Kitchenette", "Business center"]
     }
   ];

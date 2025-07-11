@@ -48,9 +48,9 @@ const Booking = () => {
 
   const roomTypes = [
     { value: "deluxe-suite", label: "Standard Bedroom - ₵400" },
-    { value: "Self Contained Bedroom", label: "Self Contained Bedroom - ₵500" },
-    { value: "classic-double", label: "Classic Double -  ₵1500" },
-    { value: "2 Bedroom Fletch", label: "2 Bedroom Fletch - ₵1200" },
+    { value: "Self Contained Bedroom", label: "Self Contained Bedroom - ₵450" },
+    { value: "classic-double", label: "Classic Double -  ₵500" },
+    { value: "2 Bedroom  full-fledged", label: "2 Bedroom  full-fledged - ₵800" },
     { value: "executive-studio", label: "Executive Studio - From ₵1000" },
   ];
 
