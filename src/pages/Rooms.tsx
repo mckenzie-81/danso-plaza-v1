@@ -40,7 +40,7 @@ const Rooms = () => {
       name: "Executive Studio",
       tagline: "Business comfort with style",
       price: "From ₵1,200",
-      image: "/photo3.png",
+      image: "/photo11.png",
       features: ["King bed", "Living area", "Kitchenette", "Business center"]
     }
   ];
