@@ -24,7 +24,7 @@ const Location = () => {
     },
     {
       name: "Airport",
-      distance: "45 minutes drive",
+      distance: "10 minutes drive",
       description: "International and domestic flights"
     },
     {
