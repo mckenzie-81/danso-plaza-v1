@@ -36,7 +36,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Boutique stays designed for calm. Experience understated luxury in
+            Stays designed for calm. Experience understated luxury in
             the heart of tranquility.
           </motion.p>
 

@@ -29,12 +29,12 @@ const Gallery = () => {
       alt: "Outside View",
       category: "Views"
     },
-    {
-      id: 10,
-      src: "/photo8.png",
-      alt: "Top View ",
-      category: "Views"
-    },
+    // {
+    //   id: 10,
+    //   src: "/photo8.png",
+    //   alt: "Top View ",
+    //   category: "Views"
+    // },
     {
       id: 5,
       src: "/photo8.png",
