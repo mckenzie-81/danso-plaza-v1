@@ -141,7 +141,7 @@ const Home = () => {
         <footer className="w-full mt-auto py-6">
           <div className="text-sm md:text-lg max-w-2xl mx-auto text-center text-muted-foreground">
             <a
-              href="https://radiiant.site"
+              href="https://radiiantsoftwarelabs.com"
               target="_blank"
               rel="noopener noreferrer"
             >
